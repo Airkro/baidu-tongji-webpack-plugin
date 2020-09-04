@@ -1,0 +1,53 @@
+{
+  "name": "baidu-tongji-webpack-plugin",
+  "version": "0.0.1",
+  "description": "Add `baidu tongji` to your project",
+  "license": "MIT",
+  "author": {
+    "name": "Eric Chen",
+    "email": "airkro@qq.com"
+  },
+  "keywords": [
+    "analytics",
+    "html",
+    "plugin",
+    "webpack",
+    "webpack-plugin"
+  ],
+  "homepage": "https://github.com/airkro/baidu-tongji-webpack-plugin",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/airkro/baidu-tongji-webpack-plugin.git"
+  },
+  "bugs": {
+    "url": "https://github.com/airkro/baidu-tongji-webpack-plugin/issues"
+  },
+  "main": "index.js",
+  "files": [],
+  "scripts": {
+    "format": "nice-move lint"
+  },
+  "dependencies": {
+    "schema-utils": "^2.7.1"
+  },
+  "devDependencies": {
+    "@nice-move/cli": "^0.4.8",
+    "@nice-move/eslint-config-base": "^0.3.9",
+    "@nice-move/prettier-config": "^0.3.2",
+    "eslint": "^6.8.0",
+    "husky": "^4.2.5",
+    "prettier": "^2.1.1"
+  },
+  "engines": {
+    "node": "^10.18 || >=12.14"
+  },
+  "eslintConfig": {
+    "extends": "@nice-move/eslint-config-base"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "nice-move lint"
+    }
+  },
+  "prettier": "@nice-move/prettier-config"
+}
