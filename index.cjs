@@ -1,6 +1,6 @@
 // eslint-disable-next-line import/no-unresolved
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const validate = require('schema-utils');
+const { validate } = require('schema-utils');
 
 const schema = {
   type: 'string',
@@ -18,10 +18,9 @@ module.exports = class BaiduTongJiWebpackPlugin {
   apply(compiler) {
     compiler.hooks.compilation.tap(name, (compilation) => {
       const hooks = HtmlWebpackPlugin.getHooks(compilation).alterAssetTagGroups;
-      hooks.tapAsync(name, (htmlPluginData, cb) => {
+      hooks.tapAsync(name, (htmlPluginData, callback) => {
         const { headTags } = htmlPluginData;
 
-        // eslint-disable-next-line no-param-reassign
         htmlPluginData.headTags = [
           {
             tagName: 'script',
@@ -29,17 +28,21 @@ module.exports = class BaiduTongJiWebpackPlugin {
             attributes: {
               async: true,
             },
+            meta: { plugin: name },
           },
           {
             tagName: 'script',
             attributes: {
               async: true,
+              integrity: null,
               src: `//hm.baidu.com/hm.js?${this.id}`,
             },
+            meta: { plugin: name },
           },
-        ].concat(headTags);
+          ...headTags,
+        ];
 
-        return cb(null, htmlPluginData);
+        return callback(null, htmlPluginData);
       });
     });
   }
