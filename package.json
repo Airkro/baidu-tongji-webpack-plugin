@@ -1,6 +1,6 @@
 {
   "name": "baidu-tongji-webpack-plugin",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Add `baidu tongji` to your project",
   "license": "MIT",
   "author": {
@@ -26,27 +26,27 @@
   "main": "index.cjs",
   "files": [],
   "scripts": {
-    "lint": "nice-move lint"
+    "lint": "nice-move lint",
+    "prepare": "git config core.hooksPath .githooks"
   },
   "dependencies": {
-    "schema-utils": "^3.0.0"
+    "schema-utils": "^3.1.1"
   },
   "devDependencies": {
-    "@nice-move/cli": "^0.5.20",
-    "@nice-move/commitlint-config": "^0.1.0",
-    "@nice-move/eslint-config-base": "^0.5.28",
-    "@nice-move/prettier-config": "^0.4.2",
-    "commitlint": "^12.0.1",
-    "eslint": "^7.22.0",
-    "garou": "^0.1.19",
-    "husky": "^4.3.8",
-    "prettier": "^2.2.1"
+    "@nice-move/cli": "^0.5.32",
+    "@nice-move/commitlint-config": "^0.2.2",
+    "@nice-move/eslint-config-base": "^0.5.66",
+    "@nice-move/prettier-config": "^0.5.1",
+    "commitlint": "^13.2.1",
+    "eslint": "^7.32.0",
+    "garou": "^0.2.4",
+    "prettier": "^2.4.1"
   },
   "peerDependencies": {
-    "html-webpack-plugin": "^5.3.1"
+    "html-webpack-plugin": "^5.0.0"
   },
   "engines": {
-    "node": "^12.18 || ^14"
+    "node": "^12.22.0 || ^14.17.0 || >=16.13.0"
   },
   "publishConfig": {
     "access": "public",
@@ -57,12 +57,6 @@
   },
   "eslintConfig": {
     "extends": "@nice-move/eslint-config-base"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "nice-move lint",
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
-    }
   },
   "prettier": "@nice-move/prettier-config"
 }

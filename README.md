@@ -20,7 +20,7 @@ npm install baidu-tongji-webpack-plugin --save-dev
 
 ## Usage
 
-```js
+```cjs
 // example: webpack.config.js
 const BaiduTongJiWebpackPlugin = require('baidu-tongji-webpack-plugin');
 

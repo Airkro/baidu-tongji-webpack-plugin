@@ -1,3 +1,5 @@
+'use strict';
+
 // eslint-disable-next-line import/no-unresolved
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { validate } = require('schema-utils');
@@ -21,6 +23,7 @@ module.exports = class BaiduTongJiWebpackPlugin {
       hooks.tapAsync(name, (htmlPluginData, callback) => {
         const { headTags } = htmlPluginData;
 
+        // eslint-disable-next-line no-param-reassign
         htmlPluginData.headTags = [
           {
             tagName: 'script',
